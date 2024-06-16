@@ -9,12 +9,17 @@ const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = (event: React.FormEvent) => {
-    event.preventDefault();
-    console.log(
-      `Intentando iniciar sesión con usuario: ${username} y contraseña: ${password}`
-    );
-  };
+  async function login() {
+    const response = await fetch("/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    const data = await response.json()
+    console.log(data)
+  }
+
 
   return (
     <>
@@ -32,14 +37,14 @@ const LoginPage = () => {
             </div>
             <a className="text-blue-500 font-medium">Forgot password?</a>
           </div>
-          <Button className="text-white bg-blue-500">Sign In</Button>
+          <Button className="text-white bg-blue-500 my-2" onClick={login}>Sign In</Button>
           <div className="w-full border border-gray-100"></div>
-          <Button className="text-white bg-zinc-800">
+          <Button className="text-white bg-zinc-800 mt-2">
             Or sign in with Google
           </Button>
           <div className="w-full flex justify-center mt-4">
             <p className="text-xs">
-              Don't have an account?{" "}
+              Don&apos;t have an account?{" "}
               <span className=" text-blue-500 font-medium">Sign up now</span>
             </p>
           </div>
