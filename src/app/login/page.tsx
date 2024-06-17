@@ -9,15 +9,16 @@ const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  async function login() {
-    const response = await fetch("/api/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-    const data = await response.json()
-    console.log(data)
+  async function login(e: any) {
+    console.log(e)
+    // const response = await fetch("/api/login", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // })
+    // const data = await response.json()
+    // console.log(data)
   }
 
 
