@@ -17,6 +17,13 @@ const config = {
         "2xl": "1400px",
       },
     },
+    colors: {
+      'accent-orange': '#FF9635',
+      'accent-blue': '#ff00ff',
+      'secondary-white': '#ffffff',
+      'orange-gradient-1': '#FF4E43',
+      'orange-gradient-2': '#FFB240'
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",

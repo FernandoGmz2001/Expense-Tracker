@@ -42,6 +42,7 @@ const LoginPage = () => {
         body: JSON.stringify({ email: values.email, password: values.password }),
       });
       const data = await response.json();
+      console.log(data)
       redirect("/dashboard", RedirectType.replace)
 
     }catch(err : any){
@@ -120,5 +121,4 @@ const LoginPage = () => {
     </>
   );
 };
-
 export default LoginPage;
